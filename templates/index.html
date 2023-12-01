@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio with Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <!-- Your navigation menu here -->
+        </nav>
+    </header>
+    <div id="portfolio">
+        <h1>About Me</h1>
+        <p>Welcome to my portfolio! I am a web developer passionate about creating amazing websites.</p>
+        <h2>My Projects</h2>
+        
+        <!-- Projects container will hold all the project cards -->
+        <div id="projects-container">
+            <!-- Each project is a card -->
+            <div class="project-card">
+                <h3>Image Recognition with Convolutional Neural Networks</h3>
+                <p>Leveraging the power of Convolutional Neural Networks (CNNs), this image recognition system can classify images into
+                     1000 different categories with high accuracy. Trained on the ImageNet dataset, the model demonstrates the efficacy
+                      of deep learning in computer vision tasks.</p>
+            </div>
+            
+            <div class="project-card">
+                <h3>Chatbot Development using Sequence-to-Sequence Models</h3>
+                <p>This project involves creating a conversational agent using a sequence-to-sequence model with attention mechanisms. 
+                The chatbot is trained on a dataset of dialogues to perform tasks ranging from customer service to engaging in small talk, 
+                showcasing the versatility of neural network architectures in natural language processing.</p>
+            </div>
+            
+            <div class="project-card">
+                <h3>Drug Discovery with Generative Adversarial Networks</h3>
+                <p>Applying Generative Adversarial Networks (GANs) to the field of medicinal chemistry, this project generates novel 
+                    molecular structures for drug discovery. The model learns from known pharmacologically active compounds to propose
+                     new candidates for drug development pipelines.</p>
+            </div>
+            <div class="project-card">
+                <h3>Drug Discovery with Generative Adversarial Networks</h3>
+                <p>Applying Generative Adversarial Networks (GANs) to the field of medicinal chemistry, this project generates novel
+                     molecular structures for drug discovery. The model learns from known pharmacologically active compounds to propose
+                      new candidates for drug development pipelines.</p>
+            </div>
+            <div class="project-card">
+                <h3>Drug Discovery with Generative Adversarial Networks</h3>
+                <p>Applying Generative Adversarial Networks (GANs) to the field of medicinal chemistry, this project generates novel
+                     molecular structures for drug discovery. The model learns from known pharmacologically active compounds to propose
+                      new candidates for drug development pipelines.</p>
+            </div>
+        </div>
+
+        
+    </div>
+     <!-- Bot selection dropdown -->
+     <div id="bot-selector-container">
+        <label for="bot-selector">Choose a chatbot:</label>
+        <select id="bot-selector" name="bots">
+            <option value="sentiment-analysis">Sentiment Analysis Bot</option>
+            <!-- Placeholder for other bots -->
+            <option value="qa-bot" disabled>Q&A Bot (Coming Soon)</option>
+            <option value="romantic-bot" disabled>Romantic Chat Bot (Coming Soon)</option>
+        </select>
+        <button id="activate-btn">Activate Bot</button>
+    </div>
+    
+    <!-- Bot activated message will go here -->
+    <p id="bot-activated-message"></p>
+
+    <div id="chat-container">
+        <div id="chat-header">
+            <span>Sentiment Analysis Bot</span>
+            <button id="minimize-chat">-</button> <!-- Button to minimize the chat -->
+        </div>
+        <!-- <div class="bot-name">Sentiment Analysis Bot</div> -->
+        <div id="chat-box">
+            
+            <!-- Messages will be dynamically added here -->
+        </div>
+        <div id="input-area">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <script src="static/js/script.js"></script>
+    <!-- Add additional JavaScript for the chatbot functionality -->
+    <script>
+        // Your chatbot JavaScript code here
+    </script>
+</body>
+</html>
