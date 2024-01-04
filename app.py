@@ -1,17 +1,19 @@
-from flask import Flask, request, jsonify
-from inference import generate_response
+from flask import Flask, request, jsonify, render_template
+
+from inference import generate_response, load_model
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return app.send_static_file('index.html')
+    return render_template('index.html')
 
 @app.route('/talk', methods=['POST'])
 def talk():
     data = request.json
     message = data['message']
+    model, tokenizer= load_model('./sentiment_trained_model')
     # Replace the placeholder in the /talk route with:
-    response = generate_response(message)
+    response = generate_response(message, model, tokenizer)
     # Print the message to the console
     print("BOT said:", response)
     
@@ -21,4 +23,4 @@ def talk():
     return jsonify({'response': response})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host= '0.0.0.0', port= 5000, debug=True)
